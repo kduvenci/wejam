@@ -19,6 +19,7 @@ gem 'cloudinary'
 gem 'rest-client', '~> 2.0', '>= 2.0.2'
 gem 'carrierwave', '~> 1.2'
 gem 'devise'
+gem 'faker'
 
 
 group :development do

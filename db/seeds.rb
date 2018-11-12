@@ -1,7 +1,32 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require "faker"
+# TODO: Write a seed to insert 100 posts in the database
+
+10.times do
+  User.create(
+    name: Faker::Name.name,
+    instrument: Faker::Music.instrument,
+    description: "I'm looking for a #{Faker::Music.genre} band to join.",
+    photo: "ag2ergewffew",
+    email: Faker::Internet.email,
+    password: "123456")
+end
+
+
+20.times do
+  Band.create(
+    name: Faker::RockBand.name,
+    genre: Faker::Music.genre,
+    description: "We needs a #{Faker::Music.instrument} player to join and help us build our future album, '#{Faker::Music.album }'.",
+    photo: "ag2ergewffew",
+    user: User.all.sample
+    )
+end
+sample_user = User.first
+sample_band = Band.first
+5.times do
+  JamSession.create(
+    status: "Pending",
+    user: sample_user,
+    band: sample_band
+  )
+end
