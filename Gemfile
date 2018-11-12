@@ -15,6 +15,11 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'cloudinary'
+gem 'rest-client', '~> 2.0', '>= 2.0.2'
+gem 'carrierwave', '~> 1.2'
+gem 'devise'
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'
