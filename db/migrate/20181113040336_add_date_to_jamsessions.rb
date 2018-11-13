@@ -3,4 +3,3 @@ class AddDateToJamsessions < ActiveRecord::Migration[5.2]
     add_column :jam_sessions, :date, :date
   end
 end
-
