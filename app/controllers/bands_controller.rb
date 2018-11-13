@@ -28,3 +28,4 @@ class BandsController < ApplicationController
     params.require(:band).permit(:name, :genre, :description, :photo)
   end
 end
+
