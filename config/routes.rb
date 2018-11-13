@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
   root to: 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :users
+
+  resources :bands, only: [:index, :show, :new, :create] do
+    resources :jam_sessions, only: [:create]
+  end
+
+  resources :jam_sessions, only: [:destroy]
+  resources :user, only: [:show]
 end

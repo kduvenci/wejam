@@ -1,0 +1,2 @@
+class JamSessionsController < ApplicationController
+end
