@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class JamsessionControllerTest < ActionDispatch::IntegrationTest
+class JamsessionsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
