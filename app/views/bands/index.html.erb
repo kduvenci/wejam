@@ -1,0 +1,21 @@
+<h1>Bands</h1>
+<div class="container">
+  <div class="row">
+      <% @bands.each do |band| %>
+        <%= link_to band_path(band) do  %>
+          <div class="col-xs-12 col-md-4">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path (band.photo.file ? band.photo : "sample"), height: 300, width: 400, crop: :fill %>')">
+            </div>
+            <div class="card-content">
+              <h3><%= band.name %></h3>
+              <p><%= band.genre %></p>
+              <p><%= band.description %></p>
+              <p><%= band.location %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+  </div>
+</div>
+<div id="map"></div>
+
