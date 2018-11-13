@@ -7,13 +7,13 @@
       <h3><%= @band.genre %></h3>
       <h4>Shibuya area</h4>
       <br></br>
-      </div>
-      <div class="row">
-        <% if @band.description.empty? %>
+    </div>
+    <div class="row">
+      <% if @band.description.empty? %>
         <p>No Description.</p>
-        <% else %>
+      <% else %>
         <p><%= @band.description %></p>
-        <% end %>
+      <% end %>
     </div>
   </div>
 </center>
