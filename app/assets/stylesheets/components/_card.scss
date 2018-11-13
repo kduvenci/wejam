@@ -1,17 +1,21 @@
+.card-full {
+  height: 400px;
+  width: 250px;
+  background-color: white;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  box-shadow: 1px 1px 3px #333333;
+}
 .card {
-  height: 175px;
+  height: 200px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
   color: white;
-  position: relative;
+  border-radius: 1px;
 }
-.card-user {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  width: 40px;
-  border-radius: 50%;
+.card-body {
+  padding: 0 8px;
 }
 .card-category {
   position: absolute;
