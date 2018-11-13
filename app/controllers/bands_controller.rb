@@ -1,7 +1,7 @@
 class BandsController < ApplicationController
   def index
     @bands = Band.all
-  new
+  end
 
   def show
     @band = Band.find(params[:user_id])
@@ -9,7 +9,7 @@ class BandsController < ApplicationController
 
   def new
     @band = Band.new
-  end 
+  end
 
   def create
     @band = Band.new(band_params)
