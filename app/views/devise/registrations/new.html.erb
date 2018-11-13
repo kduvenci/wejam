@@ -1,4 +1,4 @@
-<h1 class="text-center">Sign up</h1>
+<h1 class="text-center sign-up">Sign up</h1>
 
 <div class="container sign-up-container">
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -34,7 +34,7 @@
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Sign up" %>
+      <%= f.button :submit, "Sign up", class: "submit-btn" %>
     </div>
   <% end %>
 </div>
