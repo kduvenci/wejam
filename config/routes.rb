@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
-  resources :bands, only: [:show_all]
-  resources :user, only: [:show, :new, :create] do
-    get "/dashboard", to: 'pages#dashboard', as: 'dashboard'
-    resources :bands, only: [:index, :show, :new, :create]
+  devise_for :users
+
+  resources :bands, only: [:index, :show, :new, :create] do
+    resources :jam_sessions, only: [:create]
   end
+
+  resources :jam_sessions, only: [:destroy]
+  resources :user, only: [:show]
 end
