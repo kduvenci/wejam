@@ -8,6 +8,7 @@ gem 'puma'
 gem 'rails', '5.2.1'
 gem 'redis'
 
+# Added Gems
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
 gem 'font-awesome-sass', '~> 5.0.9'
@@ -21,6 +22,7 @@ gem 'carrierwave', '~> 1.2'
 gem 'devise'
 gem 'faker'
 gem "pundit"
+gem "geocoder"
 
 group :development do
   gem 'web-console', '>= 3.3.0'
