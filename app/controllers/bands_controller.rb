@@ -7,6 +7,13 @@ class BandsController < ApplicationController
 
   def show
     @band = Band.find(params[:id])
+
+    @btnText = "Connect"
+    current_user.jam_sessions.each do |jam_session|
+      if jam_session.band_id == @band.id
+        @btnText = jam_session.status
+      end
+    end
   end
 
   def new
@@ -27,5 +34,5 @@ class BandsController < ApplicationController
   def band_params
     params.require(:band).permit(:name, :genre, :description, :photo)
   end
-end
 
+end
