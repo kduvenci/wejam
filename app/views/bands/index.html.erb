@@ -1,13 +1,10 @@
 <div class="main-container">
   <div class="row">
     <h1 class="text-center">Bands</h1>
-    <div class="col-xs-12 col-md-7">
-
-      <!-- Added the scroll in the div bellow -->
-      <div style="width:850px;height:650px;line-height:3em; overflow:auto;padding:5px;">
+    <div class="col-xs-12">
         <% @bands.each do |band| %>
         <%= link_to band_path(band) do  %>
-        <div class="col-xs-12 col-md-4">
+        <div class="col-xs-12 col-md-3">
           <div class="card-full">
             <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://blogmedia.evbstatic.com/wp-content/uploads/wpmulti/sites/3/2018/03/03103805/big-concert-audience-listening-to-music-at-festival-picture-id485343244.jpg')">
             </div>

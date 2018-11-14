@@ -7,6 +7,8 @@ if Rails.env.development?
  User.destroy_all
 end
 
+AREAS = %w(Shibuya Shinjuku Meguro Ikebukuro Shin-Okubo)
+
 10.times do
   User.create(
     name: Faker::Name.name,
@@ -18,12 +20,12 @@ end
 end
 
 
-20.times do
+6.times do
   Band.create(
     name: Faker::RockBand.name,
     genre: Faker::Music.genre,
     description: "We needs a #{Faker::Music.instrument} player to join and help us build our future album, '#{Faker::Music.album }'.",
-    address: Faker::Address.full_address,
+    address: AREAS.sample,
     photo: "ag2ergewffew",
     user: User.all.sample
     )
