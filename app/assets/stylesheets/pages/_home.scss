@@ -1,11 +1,42 @@
-.white_title{
-  color: white;
+// .white_title{
+//   color: white;
+// }
+
+.home-page .container-title {
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
-.home-page{
-  h1{font-weight: bold;
-    color:#661F1F;}
-    h2{
-      color:#D67D7D;}
+.home-page {
+  .container-title {
+    display: flex;
+    margin-top: 100px;
+  }
+    h1 {font-weight: bold;
+      font-size: 150px;
+      color:#661F1F;
+      font-family: Impact, Charcoal, sans-serif;
+      text-shadow: 3px 3px 0 #7A7A7A;
+  }
+    h2 {
+      font-size: 150px;
+      color: white;
+      font-family: Impact, Charcoal, sans-serif;
+      text-shadow: 4px 3px 0 #7A7A7A;
     }
+}
+
+.find-band-btn {
+  font-size: 22px;
+  padding: 10px 25px;
+  border-radius: 3px;
+}
+
+    // h2{
+    //   color:#D67D7D;}
+
+// .white_title {
+//   font-size: 300px;
+// }
 // Specific CSS for your home-page
