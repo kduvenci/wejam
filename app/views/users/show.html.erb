@@ -1,6 +1,11 @@
 <!-- This is just a basic display -->
 <div class="cover-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'bandcover.jpg' %>');">
-  <img class="avatar-photo" <%= image_tag "bandavatar.jpg", alt: "Avatar" %>
+  <% if @user.photo.present? %>
+  <%= cl_image_tag @user.photo, class:"avatar-photo", alt:"Avatar" %>
+  <% else %>
+    <p>No Photo</p>
+  <% end %>
+
 </div>
 <div class="container">
   <div class="row">
@@ -9,7 +14,6 @@
         <h1><%= @user.name %></h1>
         <h3>Musician</h3>
         <h3>Instrument: <%= @user.instrument %></h3>
-        <h4>Shibuya area</h4>
       </div>
       <div class="text-center profile-card">
         <% if (@user.description.nil?) || (@user.description.empty?) %>
