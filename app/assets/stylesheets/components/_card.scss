@@ -1,13 +1,13 @@
 .card-full {
-  height: 390px;
-  width: 250px;
-  background-color: white;
+  height: 260px;
+  width: 300px;
+  background-color: #F6F6F6;
   margin-bottom: 20px;
   border-radius: 4px;
   box-shadow: 1px 1px 3px #333333;
 }
 .card {
-  height: 200px;
+  height: 150px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
@@ -18,11 +18,11 @@
   padding: 0 8px;
   h3, p {
     margin: 10px 0 0 0;
-    padding: 0;
+    padding: 0 10px;
   }
   p{
     font-size: 14px;
-    line-height: 2;
+    line-height: 1;
   }
 }
 .card-category {
