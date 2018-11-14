@@ -1,6 +1,10 @@
-<!-- This is just a basic display -->
-<center>
+<div class="cover-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), <%= image_tag "bandcover.jpg", alt: "Cover"%>;
+  </div>
+  <img class="avatar-photo" <%= image_tag "bandavatar.jpg", alt: "Avatar"%>>
+</div>
+
  <div class="container" >
+  <center>
     <div class="row">
       <h1><%= @band.name %></h1>
       <h3>Band</h3>
@@ -8,7 +12,8 @@
       <h4>Shibuya area</h4>
       <br></br>
     </div>
-    <div class="row">
+    </center>
+    <div class="card">
       <% if @band.description.empty? %>
         <p>No Description.</p>
       <% else %>
@@ -16,6 +21,9 @@
       <% end %>
     </div>
   </div>
-</center>
+
+
+
+
 
 
