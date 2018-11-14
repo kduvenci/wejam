@@ -1,6 +1,12 @@
 require "faker"
 # TODO: Write a seed to insert 100 posts in the database
 
+if Rails.env.development?
+ JamSession.destroy_all
+ Band.destroy_all
+ User.destroy_all
+end
+
 10.times do
   User.create(
     name: Faker::Name.name,
