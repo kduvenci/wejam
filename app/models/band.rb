@@ -4,5 +4,6 @@ class Band < ApplicationRecord
   has_many :users, through: :jam_sessions
   validates :name, uniqueness: true, presence: true
   validates :genre, presence: true
+  validats :address, presence: true
   mount_uploader :photo, PhotoUploader
 end
