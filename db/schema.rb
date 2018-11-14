@@ -25,7 +25,8 @@ ActiveRecord::Schema.define(version: 2018_11_14_015256) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
-    t.index ["user_id"], name: "index_bands_on_user_id"
+    t.string "address"
+   t.index ["user_id"], name: "index_bands_on_user_id"
   end
 
   create_table "jam_sessions", force: :cascade do |t|
