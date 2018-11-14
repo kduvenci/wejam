@@ -1,5 +1,4 @@
 <div class="cover-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'bandcover.jpg' %>');">
-  <img class="avatar-photo" <%= image_tag "bandavatar.jpg", alt: "Avatar" %>
 </div>
 <div class="container">
   <div class="row">
@@ -20,7 +19,7 @@
           <p>ANNOUCEMENT : <%= @band.description %></p>
         <% end %>
       </div>
-      <span id="map"></span>
+      <div id="map"></div>
     </div>
   </div>
 </div>
