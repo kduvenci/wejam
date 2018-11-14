@@ -6,9 +6,9 @@
     <div class="col-xs-12 col-md-12">
       <div class="text-center profile-card">
         <h1><%= @band.name %></h1>
-        <h3>Band</h3>
-        <h3><%= @band.genre %></h3>
-        <h4>Shibuya area</h4>
+        <h4>Band</h4>
+        <h4><%= @band.genre %></h4>
+        <p><%= @band.address %></p>
       </div>
       <div class="text-center profile-card">
         <% if (@band.description.nil?) || (@band.description.empty?) %>

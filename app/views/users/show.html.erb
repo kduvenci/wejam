@@ -1,21 +1,24 @@
 <!-- This is just a basic display -->
-<center>
- <div class="container" >
-    <div class="row">
-      <h1><%= @user.name %></h1>
-      <h3>Musician</h3>
-      <h3>Instrument: <%= @user.instrument %></h3>
-      <h4>Shibuya area</h4>
-      <br></br>
-    </div>
-    <div class="row">
-      <% if (@user.description.nil?) || (@user.description.empty?) %>
+<div class="cover-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'bandcover.jpg' %>');">
+  <img class="avatar-photo" <%= image_tag "bandavatar.jpg", alt: "Avatar" %>>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-12">
+      <div class="text-center profile-card">
+        <h1><%= @user.name %></h1>
+        <h3>Musician</h3>
+        <h3>Instrument: <%= @user.instrument %></h3>
+        <h4>Shibuya area</h4>
+      </div>
+      <div class="text-center profile-card">
+        <% if (@user.description.nil?) || (@user.description.empty?) %>
         <p>No Description.</p>
-      <% else %>
-        <p><%= @user.description %></p>
-      <% end %>
-    </div>
-    <div class="row">
+        <% else %>
+          <p><%= @user.description %></p>
+        <% end %>
+      </div>
+      <div class="text-center profile-card">
       <h3>Pending Requests</h3>
         <% if @jamsession.status.empty? %>
         <p>No pending requests</p>
@@ -24,8 +27,7 @@
         <% elsif @jamsession.status == "accepted" %>
         <p>Your request was accepted by <%= @band.name %>!</p>
         <% end %>
+      </div>
     </div>
   </div>
-</center>
-
-
+</div>
