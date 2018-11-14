@@ -1,11 +1,11 @@
 .main-container {
   display: flex;
-  height: 300vh;
+  height: 85vh;
 }
 
 #map {
-  flex: 0 0 450px;
-  height: 100vh;
+  flex: 1 1 450px;
+  height: 85vh;
   position: sticky !important;
   top: 0 !important;
 }
