@@ -1,11 +1,5 @@
-.main-container {
-  display: flex;
-  height: 85vh;
-}
-
 #map {
-  flex: 1 1 450px;
-  height: 85vh;
-  position: sticky !important;
-  top: 0 !important;
+  display: flex;
+  text-align: center;
+  height: 400px;
 }
