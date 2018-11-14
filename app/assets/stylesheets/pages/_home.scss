@@ -17,13 +17,20 @@
       font-size: 150px;
       color:#661F1F;
       font-family: Impact, Charcoal, sans-serif;
+      text-shadow: 3px 3px 0 #7A7A7A;
   }
     h2 {
       font-size: 150px;
       color: white;
-      text-shadow: 1px 1px 2px grey;
       font-family: Impact, Charcoal, sans-serif;
+      text-shadow: 4px 3px 0 #7A7A7A;
     }
+}
+
+.find-band-btn {
+  font-size: 22px;
+  padding: 10px 25px;
+  border-radius: 3px;
 }
 
     // h2{
