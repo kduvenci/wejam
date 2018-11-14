@@ -9,11 +9,21 @@
       <br></br>
     </div>
     <div class="row">
-      <% if @user.description.empty? %>
+      <% if (@user.description.nil?) || (@user.description.empty?) %>
         <p>No Description.</p>
       <% else %>
         <p><%= @user.description %></p>
       <% end %>
+    </div>
+    <div class="row">
+      <h3>Pending Requests</h3>
+        <% if @jamsession.status.empty? %>
+        <p>No pending requests</p>
+        <% elsif @jamsession.status == "pending" %>
+        <p>Request to <%= @band.name %> pending...</p>
+        <% elsif @jamsession.status == "accepted" %>
+        <p>Your request was accepted by <%= @band.name %>!</p>
+        <% end %>
     </div>
   </div>
 </center>
