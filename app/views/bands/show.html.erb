@@ -10,6 +10,9 @@
         <h4><%= @band.genre %></h4>
         <p><%= @band.address %></p>
       </div>
+      <div class="text-center">
+        <%= link_to @btnText, band_jam_sessions_path(@band), method:'post', class:'btn btn-primary' %>
+      </div>
       <div class="text-center profile-card">
         <% if (@band.description.nil?) || (@band.description.empty?) %>
           <p>No Description.</p>
