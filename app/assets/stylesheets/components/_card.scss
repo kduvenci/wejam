@@ -1,5 +1,5 @@
 .card-full {
-  height: 400px;
+  height: 390px;
   width: 250px;
   background-color: white;
   margin-bottom: 20px;
@@ -16,6 +16,14 @@
 }
 .card-body {
   padding: 0 8px;
+  h3, p {
+    margin: 10px 0 0 0;
+    padding: 0;
+  }
+  p{
+    font-size: 14px;
+    line-height: 2;
+  }
 }
 .card-category {
   position: absolute;
@@ -49,6 +57,8 @@
 }
 .card-link:hover {
   opacity: 0.1;
+
+// user and band card css
 }
 .cover-photo {
   height: 350px;
