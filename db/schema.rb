@@ -23,10 +23,10 @@ ActiveRecord::Schema.define(version: 2018_11_14_015256) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "address"
     t.float "latitude"
     t.float "longitude"
-    t.string "address"
-   t.index ["user_id"], name: "index_bands_on_user_id"
+    t.index ["user_id"], name: "index_bands_on_user_id"
   end
 
   create_table "jam_sessions", force: :cascade do |t|
