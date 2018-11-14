@@ -6,11 +6,16 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-
     <% if user_signed_in? %>
+      <%= link_to destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" do  %>
+        <i class="fas fa-sign-in-alt"></i>  <%= t(".sign_out", default: "Log out") %>
+      <% end %>
+      <%= link_to user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" do %>
+        <i class="fas fa-user"></i> <%= t(".profile", default: "Profile") %>
+      <% end %>
+
       <!-- Dropdown menu -->
       <div class="navbar-wagon-item">
-        HELLO1
         <div class="dropdown">
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>

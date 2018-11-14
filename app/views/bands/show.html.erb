@@ -1,0 +1,22 @@
+<div class="cover-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'bandcover.jpg' %>');">
+  <img class="avatar-photo" <%= image_tag "bandavatar.jpg", alt: "Avatar" %>>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-12">
+      <div class="text-center profile-card">
+        <h1><%= @band.name %></h1>
+        <h4>Band</h4>
+        <h4><%= @band.genre %></h4>
+        <p><%= @band.address %></p>
+      </div>
+      <div class="text-center profile-card">
+        <% if (@band.description.nil?) || (@band.description.empty?) %>
+          <p>No Description.</p>
+        <% else %>
+          <p>ANNOUCEMENT : <%= @band.description %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
