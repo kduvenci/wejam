@@ -19,7 +19,21 @@
           <p>ANNOUCEMENT : <%= @band.description %></p>
         <% end %>
       </div>
-      <div id="map"></div>
+      <div class="text-center">
+        <% case %>
+          <% when @band.address == "Shibuya" %>
+            <%= image_tag "Shibuya.jpg" %>
+          <% when @band.address == "Shinjuku" %>
+             <%= image_tag "Shinjuku.jpg" %>
+          <% when @band.address == "Meguro" %>
+            <%= image_tag "Meguro.jpg" %>
+          <% when @band.address == "Ikebukuro" %>
+            <%= image_tag "Ikebukuro.jpg" %>
+          <% else %>
+             <%= image_tag "Shin_Okubo.jpg" %>
+        <% end %>
+        <p>Usually meet up in <%= @band.address %>  area</p>
+      </div>
     </div>
   </div>
 </div>
