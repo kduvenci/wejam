@@ -20,7 +20,7 @@ AREAS = %w(Shibuya Shinjuku Meguro Ikebukuro Shin-Okubo)
 end
 
 counter = 0
-photos = ["https://www.dropbox.com/s/u7mtx85osfzm5fe/avatar%201.jpg?dl=0", "https://www.dropbox.com/s/adc56qitf301tff/avatar%202.jpg?dl=0", "https://www.dropbox.com/s/fio2cfexka331br/avatar%203.jpg?dl=0", "https://www.dropbox.com/s/y5yy3dz6bx5fy35/avatar%204.jpg?dl=0", "https://www.dropbox.com/s/8t473353m58rlh7/avatar%205.jpg?dl=0", "https://www.dropbox.com/s/jjq1tw715zp6157/avatar%206.jpg?dl=0"]
+photos = url("https://www.tailored-entertainment.com/assets/images/artists/Folk-Junkies-Band-Surrey/folk-junkies-main_1440154957.jpg", "https://cdn.newsapi.com.au/image/v1/e1f851445dc795c9ef289167e65d0bd1?width=1024", "https://images.easyweddings.com.au/s3/ew-image-global/Live/ImageUploader/d3ff8d23-8620-4d3c-8339-f773a37886d6-BBB_06.jpg?quality=80&format=jpg&mode=crop&crop=0,0,0,0&width=1200", "https://www.tailored-entertainment.com/assets/images/artists/Just-For-Tonight-Band-Midlands/just-for-tonight-main_1486635361.jpg", "https://rockchicksrule.files.wordpress.com/2013/10/scandaljp-01.jpg", "http://www.oneokrock.com/wp-content/uploads/2016/05/7c3a5f0fa95101d2d2923e447e1b9abf.jpg")
 6.times do
   instrument = Faker::Music.instrument
   band = Band.new(
