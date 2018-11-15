@@ -12,13 +12,17 @@
         <!-- Profile picture with dropdown list -->
         <div class="navbar-wagon-item">
           <div class="dropdown">
-            <%= cl_image_tag current_user.photo, class:"avatar dropdown-toggle", alt:"Avatar", id:"navbar-wagon-menu", data: { toggle: 'dropdown' } %>
+            <% if current_user.photo.present? %>
+              <%= cl_image_tag picture, class:"avatar dropdown-toggle", alt:"Avatar", id:"navbar-wagon-menu", data: { toggle: 'dropdown' } %>
+            <% else %>
+            <%= image_tag "no_pic.png", class:"avatar dropdown-toggle", alt:"Avatar", id:"navbar-wagon-menu", data: { toggle: 'dropdown' } %>
             <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
               <li><%= link_to 'Profile', user_path(current_user) %>  </li>
               <li><%= link_to destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" do  %>
               <%= t(".sign_out", default: "Log out") %></li>
               <% end %>
               </ul>
+              <% end %>
           </div>
         </div>
 
