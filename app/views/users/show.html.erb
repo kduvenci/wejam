@@ -1,39 +1,53 @@
-<!-- This is just a basic display -->
 <div class="cover-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'bandcover.jpg' %>');">
   <% if @user.photo.present? %>
-  <%= cl_image_tag @user.photo, class:"avatar-photo", alt:"Avatar" %>
+    <%= cl_image_tag @user.photo, class:"avatar-photo", alt:"Avatar" %>
   <% else %>
     <p>No Photo</p>
   <% end %>
-
 </div>
+
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-12">
+  <div class="col-xs-12 col-md-12">
       <div class="text-center profile-card">
         <h1><%= @user.name %></h1>
         <h3>Musician</h3>
         <h3>Instrument: <%= @user.instrument %></h3>
       </div>
+  </div>
+</div>
+  
+<div class="container">
+  <div class="col-xs-12 col-md-12">
       <div class="text-center profile-card">
-        <% if (@user.description.nil?) || (@user.description.empty?) %>
-        <p>No Description.</p>
-        <% else %>
+        <% if @user.description.present? %>
           <p><%= @user.description %></p>
+        <% else %>
+          <p>No description..</p>
         <% end %>
       </div>
-      <div class="text-center profile-card">
-      <h3>Pending Requests</h3>
-        <% if @jamsession %>
-        <% if @jamsession.status.empty? %>
-        <p>No pending requests</p>
-        <% elsif @jamsession.status == "pending" %>
-        <p>Request to <%= @band.name %> pending...</p>
-        <% elsif @jamsession.status == "accepted" %>
-        <p>Your request was accepted by <%= @band.name %>!</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class='col-xs-12 col-md-12'> 
+    <div class="profile-card">
+      <h3 class='text-center'>Requests Status</h3>
+      <div class="col-md-offset-1">
+        <% if @user.jam_sessions.present? %>
+          <% @user.jam_sessions.each do |jam_session| %>            
+            <% if jam_session.status.downcase == "pending" %>
+              <p>Request to <%= jam_session.band.name %> pending...</p>
+            <% end %>
+          <% end %>
+          <% @user.jam_sessions do |jam_session| %>
+            <% if jam_session.downcase == "accepted" %>
+              <p>Accepted: <%= jam_session.band.name %>!</p>
+            <% end %>
+          <% end %>
+        <% else %>  
+            <p>No request..</p>
         <% end %>
-        <% end %>
-      </div>
+      </div>  
     </div>
   </div>
 </div>
