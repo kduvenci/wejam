@@ -2,7 +2,18 @@ class BandsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @bands = Band.all
+    if params[:query].present?
+      sql_query = " \
+        name @@ :query \
+        OR genre @@ :query \
+        OR description @@ :query \
+        OR address @@ :query \
+      "
+      @bands = Band.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @bands = Band.all
+    end
+
   end
 
   def show
