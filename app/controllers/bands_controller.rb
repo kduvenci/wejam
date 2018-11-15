@@ -16,6 +16,14 @@ class BandsController < ApplicationController
         end
       end
     end
+  # Geocode bellow
+    # @addresses = Address.where.not(latitude: nil, longitude: nil)
+    # @markers = @addresses.map do |location|
+    #   {
+    #     lng: address.longitude,
+    #     lat: address.latitude
+    #   }
+    # end
   end
 
   def new
