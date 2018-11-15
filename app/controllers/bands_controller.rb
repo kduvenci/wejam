@@ -18,15 +18,7 @@ class BandsController < ApplicationController
 
   def show
     @band = Band.find(params[:id])
-    @btnText = "Connect"
-
-    if user_signed_in?
-      current_user.jam_sessions.each do |jam_session|
-        if jam_session.band_id == @band.id
-          @btnText = jam_session.status
-        end
-      end
-    end
+    @jam_session = current_user.jam_sessions.find_by(band: @band) || JamSession.new
   end
 
   def new

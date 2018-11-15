@@ -29,10 +29,27 @@
           <% end  %>
         </ul>
       <% else %>
-        <div class="text-center">
-          <%= link_to @btnText, band_jam_sessions_path(@band), method:'post', class:'btn btn-primary' %>
-        </div>
-      <% end  %>
+        <% if user_signed_in? %>
+          <% if @jam_session.id %>
+              <div class="container">
+                <%= @jam_session.status %>
+              </div>
+          <% else %>
+            <div class="text-center">
+              <div class="container">
+                <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+                  <h2>Want to Connect?</h2>
+                  <%= simple_form_for [@band, @jam_session] do |f| %>
+                      <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
+                      <%= f.submit "Connect", class:"connect-btn" %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+          <% end %>
+      <% end %>
+
       <div class="text-center profile-card">
         <% if @band.description.present? %>
           <p>ANNOUCEMENT : <%= @band.description %></p>
