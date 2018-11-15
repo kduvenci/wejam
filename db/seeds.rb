@@ -19,18 +19,20 @@ AREAS = %w(Shibuya Shinjuku Meguro Ikebukuro Shin-Okubo)
     password: "123456")
 end
 
-
+counter = 0
+photos = ["avatar_1.jpg", "avatar_2.jpg", "avatar_3.jpg", "avatar_4.jpg", "avatar_5.jpg", "avatar_6.jpg"]
 6.times do
   instrument = Faker::Music.instrument
   Band.create(
     name: Faker::RockBand.name,
     genre: Faker::Music.genre,
-    description: "We needs a #{instrument} player to join and help us build our future album, '#{Faker::Music.album }'.",
+    description: "We need a #{instrument} player to join and help us build our future album, '#{Faker::Music.album }'.",
     instrument: instrument,
     address: AREAS.sample,
-    photo: "ag2ergewffew",
+    photo: photos[counter],
     user: User.all.sample
     )
+  counter += 1
 end
 sample_user = User.first
 sample_band = Band.first
