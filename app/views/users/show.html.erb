@@ -41,7 +41,7 @@
           <% end %>
           <% @user.jam_sessions do |jam_session| %>
             <% if jam_session.downcase == "accepted" %>
-              <p>Your request was accepted by <%= jam_session.band.name %>!</p>
+              <p>Accepted: <%= jam_session.band.name %>!</p>
             <% end %>
           <% end %>
         <% else %>  
