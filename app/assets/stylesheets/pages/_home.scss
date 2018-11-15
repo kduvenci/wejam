@@ -1,6 +1,12 @@
-// .white_title{
-//   color: white;
-// }
+
+#body-class {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url('background2.jpg') no-repeat;
+  background-size: cover;
+
+}
 
 .home-page .container-title {
   display: flex;
@@ -9,29 +15,44 @@
 }
 
 .home-page {
+  color: white;
   .container-title {
     display: flex;
-    margin-top: 100px;
+    margin-top: 60px;
   }
-    h1 {font-weight: bold;
+    h1 {
+      font-weight: 900;
       font-size: 150px;
-      color:#661F1F;
-      font-family: Impact, Charcoal, sans-serif;
-      text-shadow: 3px 3px 0 #7A7A7A;
+      font-family: Circular, Helvetica, Arial, sans-serif;
+      letter-spacing: -0.02em;
+      margin-bottom: 0px;
   }
-    h2 {
-      font-size: 150px;
-      color: white;
-      font-family: Impact, Charcoal, sans-serif;
-      text-shadow: 4px 3px 0 #7A7A7A;
-    }
+  h3 {
+    margin-top: 0px;
+    font-size: 24px;
+    letter-spacing: 0.1em;
+  }
 }
 
 .find-band-btn {
-  font-size: 22px;
-  padding: 10px 25px;
-  border-radius: 3px;
+  font-size: 16px;
+  font-weight: 12px;
+  padding: 10px 60px;
+  border-radius: 50px;
+  border-width: 5px;
+  background-color: #D06B6B;
+  opacity: 9px;
+  margin-top: 50px;
+  color: white;
+  text-decoration-style: solid;
+  letter-spacing: 0.1em;
 }
+
+.find-band-btn:hover {
+  background-color: #c03c3c;
+}
+
+
 
     // h2{
     //   color:#D67D7D;}
