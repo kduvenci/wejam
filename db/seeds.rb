@@ -21,10 +21,12 @@ end
 
 
 6.times do
+  instrument = Faker::Music.instrument
   Band.create(
     name: Faker::RockBand.name,
     genre: Faker::Music.genre,
-    description: "We needs a #{Faker::Music.instrument} player to join and help us build our future album, '#{Faker::Music.album }'.",
+    description: "We needs a #{instrument} player to join and help us build our future album, '#{Faker::Music.album }'.",
+    instrument: instrument,
     address: AREAS.sample,
     photo: "ag2ergewffew",
     user: User.all.sample
