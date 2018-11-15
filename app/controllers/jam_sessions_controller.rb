@@ -1,5 +1,4 @@
 class JamSessionsController < ApplicationController
-
   def create
     @jam_session = JamSession.new
     @jam_session.status = 'Pending'
@@ -14,9 +13,16 @@ class JamSessionsController < ApplicationController
     end
   end
 
+  def update
+    @jam_session = JamSession.find(params[:id])
+    @jam_session.status = 'Accepted'
+    @jam_session.save
+    redirect_to band_path(@jam_session.band)
+  end
+
   def destroy
     @jam_session = JamSession.find(params[:id])
     @jam_session.destroy
-    redirect_to user_path
+    redirect_to band_path(@jam_session.band)
   end
 end

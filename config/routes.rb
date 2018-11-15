@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :jam_sessions, only: [:create]
   end
 
-  resources :jam_sessions, only: [:destroy]
+  resources :jam_sessions, only: [:update, :destroy]
   resources :users, only: [:show]
 end
 

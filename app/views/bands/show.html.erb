@@ -9,14 +9,35 @@
         <h4><%= @band.genre %></h4>
         <p><%= @band.address %></p>
       </div>
-      <div class="text-center">
-        <%= link_to @btnText, band_jam_sessions_path(@band), method:'post', class:'btn btn-primary' %>
-      </div>
+      <% if current_user.present? && current_user.id == @band.user_id %>
+        <ul>
+          <% @band.jam_sessions.each do |session| %>
+            <% if session.status.downcase == 'pending' %>
+              <li>
+                <%= cl_image_tag current_user.photo, class:"avatar", alt:"Avatar" %>
+                <%= link_to session.user.name, user_path(session.user) %> wants to join your band.
+                <%= link_to '+ Accept', jam_session_path(session), method:'patch', class:'btn btn-success' %>
+                <%= link_to 'x Decline', jam_session_path(session), data: { confirm: 'Are you sure?' }, method:'delete', class:'btn btn-danger' %>
+              </li>
+            <% end %>
+            <% if session.status.downcase == 'accepted' %>
+              <li>
+                <%= cl_image_tag current_user.photo, class:"avatar", alt:"Avatar" %>
+                <%= link_to session.user.name, user_path(session.user) %> in your band!.
+              </li>
+            <% end %>
+          <% end  %>
+        </ul>
+      <% else %>
+        <div class="text-center">
+          <%= link_to @btnText, band_jam_sessions_path(@band), method:'post', class:'btn btn-primary' %>
+        </div>
+      <% end  %>
       <div class="text-center profile-card">
-        <% if @band.description.nil? || @band.description.empty? %>
-          <p>No Description.</p>
-        <% else %>
+        <% if @band.description.present? %>
           <p>ANNOUCEMENT : <%= @band.description %></p>
+        <% else %>
+          <p>No Description.</p>
         <% end %>
       </div>
       <div id="map"></div>
