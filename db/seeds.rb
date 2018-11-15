@@ -19,8 +19,8 @@ AREAS = %w(Shibuya Shinjuku Meguro Ikebukuro Shin-Okubo)
     password: "123456")
 end
 
-# counter = 0
-photos = url("https://www.dropbox.com/s/u7mtx85osfzm5fe/avatar%201.jpg?dl=0", "https://www.dropbox.com/s/adc56qitf301tff/avatar%202.jpg?dl=0", "https://www.dropbox.com/s/fio2cfexka331br/avatar%203.jpg?dl=0", "https://www.dropbox.com/s/y5yy3dz6bx5fy35/avatar%204.jpg?dl=0", "https://www.dropbox.com/s/8t473353m58rlh7/avatar%205.jpg?dl=0", "https://www.dropbox.com/s/jjq1tw715zp6157/avatar%206.jpg?dl=0")
+counter = 0
+photos = ["https://www.dropbox.com/s/u7mtx85osfzm5fe/avatar%201.jpg?dl=0", "https://www.dropbox.com/s/adc56qitf301tff/avatar%202.jpg?dl=0", "https://www.dropbox.com/s/fio2cfexka331br/avatar%203.jpg?dl=0", "https://www.dropbox.com/s/y5yy3dz6bx5fy35/avatar%204.jpg?dl=0", "https://www.dropbox.com/s/8t473353m58rlh7/avatar%205.jpg?dl=0", "https://www.dropbox.com/s/jjq1tw715zp6157/avatar%206.jpg?dl=0"]
 6.times do
   instrument = Faker::Music.instrument
   band = Band.new(
@@ -33,7 +33,7 @@ photos = url("https://www.dropbox.com/s/u7mtx85osfzm5fe/avatar%201.jpg?dl=0", "h
     )
   band.remote_photo_url = photos[counter]
   band.save!
-  # counter += 1
+  counter += 1
 end
 sample_user = User.first
 sample_band = Band.first
