@@ -18,7 +18,11 @@ class BandsController < ApplicationController
 
   def show
     @band = Band.find(params[:id])
-    @jam_session = current_user.jam_sessions.find_by(band: @band) || JamSession.new
+    if current_user
+      @jam_session = current_user.jam_sessions.find_by(band: @band) || JamSession.new
+    else
+      @jam_session = JamSession.new
+    end
   end
 
   def new
