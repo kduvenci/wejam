@@ -1,19 +1,20 @@
 <div id="user-banner" class="cover-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= current_user.photo %>');">
-</div>
+  </div>
 
+<div class="card-container">
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-7">
       <div class="text-center profile-card">
-        <h2>Musician: <%= @user.name %></h2>
-        <h4>Instrument: <%= @user.instrument %></h4>
+        <h2><%= @user.name %></h2>
+        <h4>Plays the <%=@user.instrument %></h4>
       </div>
 
       <div class="text-center profile-card">
         <% if @user.description.present? %>
-          <p><%= @user.description %></p>
+          <h5><%= @user.description %></h5>
         <% else %>
-          <p>No description...</p>
+          <h5><%= @user.name %> did not write any description yet.</h5>
         <% end %>
       </div>
     </div>
@@ -26,7 +27,7 @@
           <% if @user.jam_sessions.present? %>
             <% @user.jam_sessions.each do |jam_session| %>
               <% if jam_session.status.downcase == "pending" %>
-                <p>Request to <%= jam_session.band.name %> pending...</p>
+                <h5><%= cl_image_tag jam_session.band.photo, class:"band-avatar", alt:"Band Avatar" %> Request to <%= jam_session.band.name %> is pending...</h5>
               <% end %>
             <% end %>
             <% @user.jam_sessions.each do |jam_session| %>
@@ -35,11 +36,12 @@
               <% end %>
             <% end %>
           <% else %>
-              <p>No requests...</p>
+              <h4>No requests yet...</h4>
           <% end %>
           <% end %>
       </div>
     </div>
+  </div>
   </div>
 </div>
 </div>
