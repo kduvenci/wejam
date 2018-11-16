@@ -19,7 +19,11 @@
             <% end %>
             <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
               <li><%= link_to 'Profile', user_path(current_user) %>  </li>
-              <li><%= link_to 'Your band', band_path(current_user.bands.first) %> </li>
+              <% if current_user.bands.present? %>
+                <li><%= link_to 'Your band', band_path(current_user.bands.first) %> </li>
+              <% else %>
+                <li><%= link_to 'Create band', new_band_path(current_user) %> </li>
+              <% end %>
               <li><%= link_to destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" do  %>
               <%= t(".sign_out", default: "Log out") %></li>
               <% end %>
