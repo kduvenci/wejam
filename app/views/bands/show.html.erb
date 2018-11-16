@@ -43,15 +43,9 @@
             </div>
         <% else %>
           <div class="text-center">
-              <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
-                <h3>Want to Connect?</h3>
-                <%= simple_form_for [@band, @jam_session] do |f| %>
-                <ul class="list-inline">
-                  <li><%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"}, placeholder: "Select date", label: false %></li>
-                  <li><%= f.submit "Connect", class:"connect-btn" %></li>
-                </ul>
-                <% end %>
-                <button id="send-request" class="btn btn-primary">Click me!</button>
+              <div class="form-wrapper text-center" id="connect_area" style="width: 400px; margin: 0 auto;">
+                  <h2>Want to Connect?</h2>
+                  <%= render 'jam_sessions/connect_form', band: @band, jam_session: @jam_session %>
               </div>
           </div>
         <% end %>
