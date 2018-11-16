@@ -13,7 +13,7 @@
         <div class="navbar-wagon-item">
           <div class="dropdown">
             <% if current_user.photo.present? %>
-              <%= cl_image_tag picture, class:"avatar dropdown-toggle", alt:"Avatar", id:"navbar-wagon-menu", data: { toggle: 'dropdown' } %>
+              <%= cl_image_tag current_user.photo, class:"avatar dropdown-toggle", alt:"Avatar", id:"navbar-wagon-menu", data: { toggle: 'dropdown' } %>
             <% else %>
             <%= image_tag "no_pic.png", class:"avatar dropdown-toggle", alt:"Avatar", id:"navbar-wagon-menu", data: { toggle: 'dropdown' } %>
             <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
