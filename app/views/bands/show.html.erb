@@ -16,8 +16,9 @@
           <p>No Description.</p>
         <% end %>
       </div>
+      <div class="request-card">
       <% if current_user.present? && current_user.id == @band.user_id %>
-        <ul>
+        <ul class="list-inline">
           <% @band.jam_sessions.each do |session| %>
             <% if session.status.downcase == 'pending' %>
               <li>
@@ -28,9 +29,9 @@
               </li>
             <% end %>
             <% if session.status.downcase == 'accepted' %>
-              <li>
-                <%= cl_image_tag current_user.photo, class:"avatar", alt:"Avatar" %>
-                <%= link_to session.user.name, user_path(session.user) %> in your band!.
+              <li class="request-content">
+                <%= cl_image_tag current_user.photo, class: "avatar", alt:"Avatar" %>
+                <%= link_to session.user.name, user_path(session.user), class: "user_name" %> in your band!.
               </li>
             <% end %>
           <% end  %>
@@ -55,6 +56,7 @@
           </div>
         <% end %>
       <% end %>
+    </div>
 
     </div>
     <div class="col-xs-12 col-md-5">
@@ -65,7 +67,7 @@
           <% when @band.address == "Shinjuku" %>
             <%= image_tag "Shinjuku.jpg", class: "map" %>
           <% when @band.address == "Meguro" %>
-            <%= image_tag "Meguro.jpg" %>
+            <%= image_tag "Meguro.jpg", class: "map" %>
           <% when @band.address == "Ikebukuro" %>
             <%= image_tag "Ikebukuro.jpg", class: "map" %>
           <% else %>
