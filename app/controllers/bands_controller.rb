@@ -34,7 +34,6 @@ class BandsController < ApplicationController
     @band.user = current_user
     if @band.save
       redirect_to band_path(@band)
-
     else
       render :new
     end
