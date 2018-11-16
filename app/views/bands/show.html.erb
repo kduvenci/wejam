@@ -2,12 +2,19 @@
 </div>
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-md-12">
-      <div class="text-center profile-card">
+    <div class="col-xs-12 col-md-7">
+      <div id="band-info" class="text-center profile-card">
         <h1><%= @band.name %></h1>
-        <h4>Band</h4>
-        <h4><%= @band.genre %></h4>
-        <p><%= @band.address %></p>
+        <p>(Usually meet up in <%= @band.address %> area)</p>
+        <p><strong>Genre: <%= @band.genre %></strong></p>
+      </div>
+      <div class="text-center profile-card">
+        <% if @band.description.present? %>
+        <h4>Band Info & Announcements</h4>
+        <p style="white-space: pre-line;"><%= @band.description %></p>
+        <% else %>
+          <p>No Description.</p>
+        <% end %>
       </div>
       <% if current_user.present? && current_user.id == @band.user_id %>
         <ul>
@@ -35,41 +42,35 @@
             </div>
         <% else %>
           <div class="text-center">
-            <div class="container">
               <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
-                <h2>Want to Connect?</h2>
+                <h3>Want to Connect?</h3>
                 <%= simple_form_for [@band, @jam_session] do |f| %>
-                  <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
-                  <%= f.submit "Connect", class:"connect-btn" %>
+                <ul class="list-inline">
+                  <li><%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"}, placeholder: "Select date", label: false %></li>
+                  <li><%= f.submit "Connect", class:"connect-btn" %></li>
+                </ul>
                 <% end %>
                 <button id="send-request" class="btn btn-primary">Click me!</button>
               </div>
-            </div>
           </div>
         <% end %>
       <% end %>
 
-      <div class="text-center profile-card">
-        <% if @band.description.present? %>
-          <p style="white-space: pre-line;"><%= @band.description %></p>
-        <% else %>
-          <p>No Description.</p>
-        <% end %>
-      </div>
+    </div>
+    <div class="col-xs-12 col-md-5">
       <div class="text-center">
         <% case %>
           <% when @band.address == "Shibuya" %>
-            <%= image_tag "Shibuya.jpg" %>
+            <%= image_tag "Shibuya.jpg", class: "map" %>
           <% when @band.address == "Shinjuku" %>
-            <%= image_tag "Shinjuku.jpg" %>
+            <%= image_tag "Shinjuku.jpg", class: "map" %>
           <% when @band.address == "Meguro" %>
             <%= image_tag "Meguro.jpg" %>
           <% when @band.address == "Ikebukuro" %>
-            <%= image_tag "Ikebukuro.jpg" %>
+            <%= image_tag "Ikebukuro.jpg", class: "map" %>
           <% else %>
-            <%= image_tag "Shin_Okubo.jpg" %>
+            <%= image_tag "Shin_Okubo.jpg", class: "map" %>
         <% end %>
-        <p>Usually meet up in <%= @band.address %> area</p>
       </div>
     </div>
   </div>
