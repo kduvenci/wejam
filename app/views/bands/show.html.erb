@@ -21,9 +21,9 @@
         <ul class="list-inline">
           <% @band.jam_sessions.each do |session| %>
             <% if session.status.downcase == 'pending' %>
-              <li>
-                <%= cl_image_tag current_user.photo, class:"avatar", alt:"Avatar" %>
-                <%= link_to session.user.name, user_path(session.user) %> wants to join your band.
+              <li class="request-content">
+                <%= cl_image_tag session.user.photo, class:"avatar", alt:"Avatar" %>
+                <%= link_to session.user.name, user_path(session.user), class: "user_name" %> wants to join your band.
                 <%= link_to '+ Accept', jam_session_path(session), method:'patch', class:'btn btn-success' %>
                 <%= link_to 'x Decline', jam_session_path(session), data: { confirm: 'Are you sure?' }, method:'delete', class:'btn btn-danger' %>
               </li>
