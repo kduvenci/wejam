@@ -16,7 +16,7 @@
 }
 
 .input-group {
-  margin-bottom: 50px;
+  margin-bottom: 15px;
   width: 300px;
   .form-control {
     border-radius: 15px;
@@ -44,6 +44,17 @@
   width: 365px;
 }
 
+.main-container h3 {
+  margin-bottom: 30px;
+}
+.main-container .band-btn {
+  color: white;
+  border-radius: 15px;
+  font-size: 20px;
+  padding: 10px 25px;
+  text-decoration: none;
+}
+
 .content-overlay {
   position: absolute;
   transition: all .3s ease;
@@ -55,7 +66,7 @@
   opacity: 0.9;
 }
 
-.text {
+.text-container {
   color: white;
   position: absolute;
   top: 50%;

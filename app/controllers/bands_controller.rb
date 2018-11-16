@@ -31,8 +31,10 @@ class BandsController < ApplicationController
 
   def create
     @band = Band.new(band_params)
+    @band.user = current_user
     if @band.save
       redirect_to band_path(@band)
+
     else
       render :new
     end
@@ -41,7 +43,7 @@ class BandsController < ApplicationController
   private
 
   def band_params
-    params.require(:band).permit(:name, :genre, :description, :photo)
+    params.require(:band).permit(:name, :genre, :address, :photo, :instrument, :description)
   end
 
 end
