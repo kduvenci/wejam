@@ -1,4 +1,4 @@
 <%= simple_form_for([band, jam_session], remote: true) do |f| %>
   <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
-  <%= f.submit "Connect", class:"connect-btn" %>
+  <%= f.submit "Connect", class:"connect-btn btn btn-success" %>
 <% end %>

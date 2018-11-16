@@ -1,17 +1,15 @@
-import swal from 'sweetalert';
-
-console.log('create runned!')
-
 function refreshInner(innerHTML) {
   const connectArea = document.getElementById('connect_area');
   connectArea.innerHTML = innerHTML;
 }
-console.log('create runned!')
+
 <% if @jam_session.errors.any? %>
-console.log('error!')
   refreshInner('<%= j render "connect_form" %>');
 <% else %>
-console.log('no error!')
   refreshInner('<%= j render "pending" %>');
-  swal({ title: "Hey !", text: "Your request sent..", icon: "success" });
+  swal({
+        title: "Hey !",
+        text: "Your request sent..",
+        icon: "success"
+      });
 <% end %>
