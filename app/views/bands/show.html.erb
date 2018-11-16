@@ -10,7 +10,8 @@
       </div>
       <div class="text-center profile-card">
         <% if @band.description.present? %>
-          <p>NOTICE : <%= @band.description %></p>
+        <h4>Band Info & Announcements</h4>
+        <p style="white-space: pre-line;"><%= @band.description %></p>
         <% else %>
           <p>No Description.</p>
         <% end %>
