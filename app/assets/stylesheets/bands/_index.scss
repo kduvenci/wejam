@@ -1,0 +1,84 @@
+.main-container {
+  position: relative;
+  h1 {
+  font-family: Circular, Helvetica, Arial, sans-serif;
+  font-size: 50px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-top: 40px;
+  // position: absolute;
+  }
+  h4 {
+    font-size: 20px;
+    margin-top: 0px;
+  }
+}
+
+.input-group {
+  margin-bottom: 50px;
+  width: 300px;
+  .form-control {
+    border-radius: 15px;
+    margin-top: 15px;
+  }
+}
+
+.btn-default {
+  border-radius: 15px;
+  margin-top: 15px;
+}
+
+
+// cards
+.card-container {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.background-img {
+  display: block;
+  box-shadow: 1px 1px 16px -2px rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+  height: 365px;
+  width: 365px;
+}
+
+.content-overlay {
+  position: absolute;
+  transition: all .3s ease;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.card-container:hover .content-overlay {
+  opacity: 0.9;
+}
+
+.text {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 35px;
+  font-size: 25px;
+  font-weight: 900;
+  font-family: Circular, Helvetica, Arial, sans-serif;
+  .text-address {
+    font-size: 14px;
+    padding-top: 2px;
+    color: #A19EB6;
+  }
+  .text-instrument {
+    font-size: 16px;
+    color: #D06C6B;
+  }
+}
+
+.overlay-left {
+  height: 365px;
+  width: 365px;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  margin-left: 15px;
+}
