@@ -30,9 +30,7 @@ photos = ["https://www.tailored-entertainment.com/assets/images/artists/Folk-Jun
     genre: Faker::Music.genre,
     description: "#{band_name} is a multicultural band based in #{location}, Tokyo, Japan. Our sound combine influences such as Hard Rock, world music, and Latin, inspiring them to develop their own unique sound.
 #{band_name} was created after the disbandment of their first group, Kill Your Idols, a Guns N’ Roses cover band, in the spring of 2017.
-Since then they have performed as their current four piece lineup all over the Tokyo metropolitan area. \n \n '#{band_name}'は東京を拠点とし活動している多文化なバンド。
-ハードロック、ワールドミュージック、ラテンなどを影響によりこれらのサウンドを融合し独自に進化したサウンドをもっている。
-前身バンド'Kill Your Idols'キルユアアイドルズはガンズアンドローゼズのカバーバンドバンドとして2017年春にやっており、残った4人のメンバーでレッドベッドロックを結成する。\n \n WANTED!!! We need a #{instrument} player to join and help us build our future album, '#{Faker::Music.album }'.",
+Since then they have performed as their current four piece lineup all over the Tokyo metropolitan area. \n \n WANTED ! ! !\nWe need a #{instrument} player to join and help us build our future album, '#{Faker::Music.album }'.",
     instrument: instrument,
     address: location,
     user: User.all.sample
