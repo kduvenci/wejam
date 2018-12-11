@@ -7,7 +7,7 @@ if Rails.env.development?
  User.destroy_all
 end
 
-AREAS = %w(Shibuya Shinjuku Meguro Ikebukuro Shin-Okubo)
+AREAS = ["2 Chome Dogenzaka, Shibuya, Tokyo 150-0002", "3-38 Shinjuku, Shinjuku-ku, Tōkyō-to 160-0022", "2 Chome-16 Kamiōsaki, Shinagawa-ku, Tōkyō-to 141-0021", "3 Chome-26 Takanawa, Minato-ku, Tōkyō-to 108-0074"]
 
 10.times do
   User.create(
