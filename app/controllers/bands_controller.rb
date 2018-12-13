@@ -18,7 +18,7 @@ class BandsController < ApplicationController
 
   def show
     @band = Band.find(params[:id])
-    @markers = { lat: @band.latitude, lng: @band.longitude }
+    @markers = [{ lat: @band.latitude, lng: @band.longitude }]
 
     if current_user
       @jam_session = current_user.jam_sessions.find_by(band: @band) || JamSession.new
