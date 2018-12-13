@@ -20,7 +20,10 @@
 
     <%= yield %>
     <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLEMAPS_BROWSER_API_KEY']}" %>
     <%= javascript_pack_tag 'application' %>
+    <%= javascript_pack_tag "map" %>
+
 
     <!-- Gmaps js: building the map -->
     <!-- <script>

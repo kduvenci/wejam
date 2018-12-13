@@ -7,7 +7,7 @@ if Rails.env.development?
  User.destroy_all
 end
 
-AREAS = %w(Shibuya Shinjuku Meguro Ikebukuro Shin-Okubo)
+AREAS = ["Shibuya Station", "Koenji Station", "Meguro Station", "Ikebukuro Station"]
 
 10.times do
   User.create(
@@ -28,7 +28,7 @@ photos = ["https://www.tailored-entertainment.com/assets/images/artists/Folk-Jun
   band = Band.new(
     name: band_name,
     genre: Faker::Music.genre,
-    description: "#{band_name} is a multicultural band based in #{location}, Tokyo, Japan. Our sound combine influences such as Hard Rock, world music, and Latin, inspiring them to develop their own unique sound.
+    description: "#{band_name} is a multicultural band based near #{location}, Tokyo, Japan. Our sound combine influences such as Hard Rock, world music, and Latin, inspiring them to develop their own unique sound.
 #{band_name} was created after the disbandment of their first group, Kill Your Idols, a Guns N’ Roses cover band, in the spring of 2017.
 Since then they have performed as their current four piece lineup all over the Tokyo metropolitan area. \n \n WANTED ! ! !\nWe need a #{instrument} player to join and help us build our future album, '#{Faker::Music.album }'.",
     instrument: instrument,

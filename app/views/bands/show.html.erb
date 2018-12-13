@@ -5,7 +5,7 @@
     <div class="col-xs-12 col-md-7">
       <div id="band-info" class="text-center profile-card">
         <h1><%= @band.name %></h1>
-        <p>(Usually meet up in <%= @band.address %> area)</p>
+        <p>(Usually meet up near <%= @band.address %>)</p>
         <p><strong>Genre: <%= @band.genre %></strong></p>
       </div>
       <div class="text-center profile-card">
@@ -53,21 +53,7 @@
     </div>
 
     </div>
-    <div class="col-xs-12 col-md-5">
-      <div class="text-center">
-        <% case %>
-          <% when @band.address == "Shibuya" %>
-            <%= image_tag "Shibuya.jpg", class: "map" %>
-          <% when @band.address == "Shinjuku" %>
-            <%= image_tag "Shinjuku.jpg", class: "map" %>
-          <% when @band.address == "Meguro" %>
-            <%= image_tag "Meguro.jpg", class: "map" %>
-          <% when @band.address == "Ikebukuro" %>
-            <%= image_tag "Ikebukuro.jpg", class: "map" %>
-          <% else %>
-            <%= image_tag "Shin_Okubo.jpg", class: "map" %>
-        <% end %>
-      </div>
+    <div class="col-xs-12 col-md-5" id="map" style="width: 400px; height: 110vh;" data-markers="<%= @markers.to_json %>">
     </div>
   </div>
 </div>
